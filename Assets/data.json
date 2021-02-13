@@ -1,0 +1,45 @@
+[
+    {
+        "_fName": "Sagar",
+        "_lName": "Rashinkar",
+        "_address": "Belapur",
+        "_city": "Shrirampur",
+        "_state": "Maharashtra",
+        "_zip": 413715,
+        "_phone": 9895969193,
+        "_email": "sagar@gmail.com"
+    }
+][
+    {
+        "_fName": "Nikhil",
+        "_lName": "Bhot",
+        "_address": "Sangamner",
+        "_city": "Akole",
+        "_state": "Maharashtra",
+        "_zip": 414565,
+        "_phone": 9856783456,
+        "_email": "nikhil@gmail.com"
+    }
+][
+    {
+        "_fName": "Ravi",
+        "_lName": "Jadhav",
+        "_address": "Karmala",
+        "_city": "Solapur",
+        "_state": "Maharashtra",
+        "_zip": 411234,
+        "_phone": 9897867554,
+        "_email": "ravi@gmail.com"
+    }
+][
+    {
+        "_fName": "Akshay",
+        "_lName": "Chandgude",
+        "_address": "Chasnali",
+        "_city": "Kopargaon",
+        "_state": "Maharashtra",
+        "_zip": 414141,
+        "_phone": 8796568243,
+        "_email": "akshay@gmail.com"
+    }
+]
