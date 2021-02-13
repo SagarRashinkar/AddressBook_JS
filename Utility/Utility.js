@@ -89,7 +89,7 @@ class Utility {
     get phone() { return this._phone }
 
     set email(email) {
-        let e_Reg = RegExp("^[a-zA-Z]{5}[a-zA-Z0-9\.\!\_]*\@[a-z]*\.(co|in|com)$");
+        let e_Reg = RegExp("^[a-zA-Z]{4,}[a-zA-Z0-9\.\!\_]*\@[a-z]*\.(co|in|com)$");
         if (e_Reg.test(email)) {
             this._email = email;
         }
