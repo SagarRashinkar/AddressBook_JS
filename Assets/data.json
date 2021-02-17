@@ -1,32 +1,12 @@
 [
     {
-        "_fName": "Sagar",
+        "_fName": "Kiran",
         "_lName": "Rashinkar",
-        "_address": "Belapur",
-        "_city": "Shrirampur",
-        "_state": "Maharashtra",
-        "_zip": 410410,
-        "_phone": 9595768860,
-        "_email": "sagar@gmail.com"
-    },
-    {
-        "_fName": "Ravi",
-        "_lName": "Jadhav",
         "_address": "Karmala",
         "_city": "Solapur",
         "_state": "Maharashtra",
         "_zip": 414141,
         "_phone": 7720825480,
-        "_email": "ravi@gmaail.com"
-    },
-    {
-        "_fName": "Kiran",
-        "_lName": "Rashinkar",
-        "_address": "Belapur",
-        "_city": "Shrirampur",
-        "_state": "Maharashtra",
-        "_zip": 413123,
-        "_phone": 8585854565,
-        "_email": "kiran@gmail.com"
+        "_email": "kiran@gmaail.com"
     }
 ]

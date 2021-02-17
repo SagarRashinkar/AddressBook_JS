@@ -1,5 +1,4 @@
 const fs = require('fs');
-const util = require('../Utility/Utility');
 const userInput = require('readline-sync');
 
 class Operation {
@@ -20,10 +19,8 @@ class Operation {
     }
 
     updateRecord(editData) {
-        // let rawdata = fs.readFileSync('../Assets/data.json');
-        // let data = JSON.parse(rawdata);
+
         try {
-            // data.push(cont);
             fs.writeFileSync('../Assets/data.json', JSON.stringify(editData));
             console.log("Contact updated successfully");
         }
@@ -32,15 +29,31 @@ class Operation {
         }
     }
 
+    deleteData(firstName, lastName) {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        let flag = false;
+        data.forEach(del => {
+            if (del._fName == firstName && del._lName == lastName) {
+                flag = true;
+                data.splice(data.indexOf(del), 1);
+                this.updateRecord(data);
+            }
+        });
+        if (!flag) {
+            console.log("Contact not found!!!");
+        }
+    }
+
     editData(firstName, lastName) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let editData = JSON.parse(rawdata);
-        var flag = false;
+        let flag = false;
         editData.forEach(cont => {
             if (cont._fName == firstName && cont._lName == lastName) {
                 console.log("Contact found Sucessfully");
                 flag = true;
-                console.log("\n1. Update First Name" +
+                console.log("1. Update First Name" +
                     "\n2. Update Last Name" +
                     "\n3. Update Address" +
                     "\n4. Update City" +
@@ -99,9 +112,28 @@ class Operation {
     }
 
     doOperations() {
-        var firstName = userInput.question("Enter first name to search: ");
-        var lastName = userInput.question("Enter last name to search: ");
-        this.editData(firstName, lastName);
+        console.log("1. Edit Contact" +
+            "\n2. Delete Contact" +
+            "\n3. Exit..."
+        );
+        let choose = userInput.questionInt("Enter your choice: ");
+        switch (choose) {
+            case 1:
+                var firstName = userInput.question("Enter first name to search: ");
+                var lastName = userInput.question("Enter last name to search: ");
+                this.editData(firstName, lastName);
+                break;
+            case 2:
+                var firstName = userInput.question("Enter first name to search: ");
+                var lastName = userInput.question("Enter last name to search: ");
+                this.deleteData(firstName, lastName);
+                break;
+            case 3:
+                break;
+            default:
+                console.log("Please enter a valid choice!!!");
+                break;
+        }
     }
 }
 
