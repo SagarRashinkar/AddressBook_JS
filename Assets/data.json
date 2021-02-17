@@ -1,6 +1,6 @@
 [
     {
-        "_fName": "Kiran",
+        "_fName": "kiran",
         "_lName": "Rashinkar",
         "_address": "Karmala",
         "_city": "Solapur",
@@ -8,5 +8,25 @@
         "_zip": 414141,
         "_phone": 7720825480,
         "_email": "kiran@gmaail.com"
+    },
+    {
+        "_fName": "Ravi",
+        "_lName": "Jadhav",
+        "_address": "Karmala",
+        "_city": "Solapur",
+        "_state": "Maha",
+        "_zip": 434343,
+        "_phone": 8767465792,
+        "_email": "ravi@gmail.com"
+    },
+    {
+        "_fName": "Nikhil",
+        "_lName": "Bhot",
+        "_address": "Rumbhodi",
+        "_city": "Akole",
+        "_state": "Maharashtra",
+        "_zip": 432134,
+        "_phone": 9876546789,
+        "_email": "nikhil@gmail.com"
     }
 ]

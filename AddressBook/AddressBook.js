@@ -10,6 +10,7 @@ do {
     var choice = userInput.questionInt("Enter your choice :");
     switch (choice) {
         case 1:
+            let flag = true;
             try {
                 let fName = input.getFirstName();
                 let lName = input.getLastName();
@@ -22,8 +23,8 @@ do {
                 var data = new util(fName, lName, address, city, state, zip, phone, email);
             } catch (err) {
                 console.error(err);
-            }
-            oper.saveData(data);
+                flag = false;
+            } if (flag) { oper.saveData(data); }
             break;
         case 2:
             oper.doOperations();
