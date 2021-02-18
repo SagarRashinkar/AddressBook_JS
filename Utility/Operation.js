@@ -67,6 +67,17 @@ class Operation {
         return res;
     }
 
+    searchByCityState(city, state) {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        
+        data.forEach((element) => {
+            if (element._city == city && element._state == state) {
+                console.log(element);
+            }
+        })
+    }
+
     editData(firstName, lastName) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let editData = JSON.parse(rawdata);
@@ -145,7 +156,8 @@ class Operation {
         console.log("1. Edit Contact" +
             "\n2. Delete Contact" +
             "\n3. Get Count of Contacts" +
-            "\n4. Exit..."
+            "\n4. Search by city and state" +
+            "\n5. Exit..."
         );
         let choose = userInput.questionInt("Enter your choice: ");
         switch (choose) {
@@ -164,6 +176,11 @@ class Operation {
                 console.log(cnt);
                 break;
             case 4:
+                let city = userInput.question("Enter city: ");
+                let state = userInput.question("Enter state: ");
+                this.searchByCityState(city, state);
+                break;
+            case 5:
                 break;
             default:
                 console.log("Please enter a valid choice!!!");
