@@ -55,6 +55,18 @@ class Operation {
         return `Number of contacts are: ${count}`;
     }
 
+    duplicateData(fName, lName) {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        let res = false;
+        if (data.some((s) => (s._fName == fName && s._lName == lName))) {
+            res = true;
+        } else {
+            res = false;
+        }
+        return res;
+    }
+
     editData(firstName, lastName) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let editData = JSON.parse(rawdata);

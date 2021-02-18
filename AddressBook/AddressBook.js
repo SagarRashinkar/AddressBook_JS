@@ -14,6 +14,13 @@ do {
             try {
                 let fName = input.getFirstName();
                 let lName = input.getLastName();
+                const dup = oper.duplicateData(fName, lName);
+                // console.log(dup);
+                if (dup.valueOf() === true) {
+                    console.log("Contact already present!!!");
+                    break;
+                }
+                
                 let address = input.getAddress();
                 let city = input.getCity();
                 let state = input.getState();

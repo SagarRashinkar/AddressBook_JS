@@ -20,13 +20,33 @@
         "_email": "ravi@gmail.com"
     },
     {
-        "_fName": "Nikhil",
-        "_lName": "Bhot",
-        "_address": "Rumbhodi",
-        "_city": "Akole",
+        "_fName": "Sagar",
+        "_lName": "Rashinkar",
+        "_address": "Belapur",
+        "_city": "Shrirampur",
         "_state": "Maharashtra",
-        "_zip": 432134,
-        "_phone": 9876546789,
-        "_email": "nikhil@gmail.com"
+        "_zip": 434343,
+        "_phone": 9898877665,
+        "_email": "sagar@gmail.com"
+    },
+    {
+        "_fName": "Varun",
+        "_lName": "Brahmane",
+        "_address": "Loni",
+        "_city": "Rahata",
+        "_state": "Maha",
+        "_zip": 433709,
+        "_phone": 7040391141,
+        "_email": "varun@gmail.com"
+    },
+    {
+        "_fName": "Vishal",
+        "_lName": "Kharde",
+        "_address": "Belapur",
+        "_city": "Shrirampur",
+        "_state": "Maha",
+        "_zip": 434343,
+        "_phone": 8787876578,
+        "_email": "vishal@gmail.com"
     }
 ]
