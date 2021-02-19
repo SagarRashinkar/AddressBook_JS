@@ -58,13 +58,11 @@ class Operation {
     duplicateData(fName, lName) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let data = JSON.parse(rawdata);
-        let res = false;
         if (data.some((s) => (s._fName == fName && s._lName == lName))) {
-            res = true;
+            return true
         } else {
-            res = false;
+            return false
         }
-        return res;
     }
 
     searchByCityState(city, state) {
@@ -76,6 +74,17 @@ class Operation {
                 console.log(`First Name: ${element._fName}, LastName: ${element._lName}`);
             }
         })
+    }
+
+    countByCity(city) {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        return data.filter(contact => contact._city == city).reduce((count, contact) => count += 1, 0);
+    }
+    countByState(state) {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        return data.filter(contact => contact._state == state).reduce((count, contact) => count += 1, 0);
     }
 
     editData(firstName, lastName) {
@@ -157,6 +166,7 @@ class Operation {
             "\n2. Delete Contact" +
             "\n3. Get Count of Contacts" +
             "\n4. Search by city and state" +
+            "\n5. Get Count by city and state" +
             "\n5. Exit..."
         );
         let choose = userInput.questionInt("Enter your choice: ");
@@ -176,11 +186,17 @@ class Operation {
                 console.log(cnt);
                 break;
             case 4:
-                let city = userInput.question("Enter city: ");
-                let state = userInput.question("Enter state: ");
+                var city = userInput.question("Enter city: ");
+                var state = userInput.question("Enter state: ");
                 this.searchByCityState(city, state);
                 break;
             case 5:
+                var city = userInput.question("Enter city: ");
+                var state = userInput.question("Enter state: ");
+                console.log("count by the city: " + this.countByCity(city));
+                console.log("count in the state : " + this.countByState(state));
+                break;
+            case 6:
                 break;
             default:
                 console.log("Please enter a valid choice!!!");
