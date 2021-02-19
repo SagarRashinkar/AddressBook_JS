@@ -79,12 +79,21 @@ class Operation {
     countByCity(city) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let data = JSON.parse(rawdata);
-        return data.filter(contact => contact._city == city).reduce((count, contact) => count += 1, 0);
+        return data.filter(contact => contact._city == city).reduce((count) => count += 1, 0);
     }
     countByState(state) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let data = JSON.parse(rawdata);
-        return data.filter(contact => contact._state == state).reduce((count, contact) => count += 1, 0);
+        return data.filter(contact => contact._state == state).reduce((count) => count += 1, 0);
+    }
+
+    sortData() {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        data.sort((a, b) => a._fName.toLowerCase().localeCompare(b._fName.toLowerCase()));
+        console.log("sorted Contacts are:")
+        console.log(data);
+        this.updateRecord(data);
     }
 
     editData(firstName, lastName) {
@@ -167,7 +176,8 @@ class Operation {
             "\n3. Get Count of Contacts" +
             "\n4. Search by city and state" +
             "\n5. Get Count by city and state" +
-            "\n5. Exit..."
+            "\n6. Sort Contacts" +
+            "\n7. Exit..."
         );
         let choose = userInput.questionInt("Enter your choice: ");
         switch (choose) {
@@ -197,6 +207,9 @@ class Operation {
                 console.log("count in the state : " + this.countByState(state));
                 break;
             case 6:
+                this.sortData();
+                break;
+            case 7:
                 break;
             default:
                 console.log("Please enter a valid choice!!!");

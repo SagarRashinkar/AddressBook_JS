@@ -1,5 +1,15 @@
 [
     {
+        "_fName": "Akshay",
+        "_lName": "Rashinkar",
+        "_address": "Belapur",
+        "_city": "Shrirampur",
+        "_state": "Maharashtra",
+        "_zip": 410102,
+        "_phone": 9875463521,
+        "_email": "akshay@gmail.com"
+    },
+    {
         "_fName": "kiran",
         "_lName": "Rashinkar",
         "_address": "Karmala",
