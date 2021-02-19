@@ -96,6 +96,23 @@ class Operation {
         this.updateRecord(data);
     }
 
+    sortByCity() {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        data.sort((a, b) => a._city.toLowerCase().localeCompare(b._city.toLowerCase()));
+        console.log("sorted Contacts are:")
+        console.log(data);
+        this.updateRecord(data);
+    }
+    sortByState() {
+        let rawdata = fs.readFileSync('../Assets/data.json');
+        let data = JSON.parse(rawdata);
+        data.sort((a, b) => a._state.toLowerCase().localeCompare(b._state.toLowerCase()));
+        console.log("sorted Contacts are:")
+        console.log(data);
+        this.updateRecord(data);
+    }
+
     editData(firstName, lastName) {
         let rawdata = fs.readFileSync('../Assets/data.json');
         let editData = JSON.parse(rawdata);
@@ -176,8 +193,9 @@ class Operation {
             "\n3. Get Count of Contacts" +
             "\n4. Search by city and state" +
             "\n5. Get Count by city and state" +
-            "\n6. Sort Contacts" +
-            "\n7. Exit..."
+            "\n6. Sort Contacts by Alphabetically" +
+            "\n7. Sort Contacts by City State or Zip" +
+            "\n8. Exit..."
         );
         let choose = userInput.questionInt("Enter your choice: ");
         switch (choose) {
@@ -210,6 +228,10 @@ class Operation {
                 this.sortData();
                 break;
             case 7:
+                this.sortByCity();
+                this.sortByState();
+                break;
+            case 8:
                 break;
             default:
                 console.log("Please enter a valid choice!!!");
